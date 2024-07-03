@@ -1,40 +1,14 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-//import {AcmeLogo} from "./AcmeLogo.jsx";
+import {Link} from 'react-router-dom'
 
-export default function NavbarComponent() {
+export default function Navbar() {
   return (
-    <Navbar className="fixed bottom-0 w-full">
-      <NavbarBrand>
-        {/* <AcmeLogo /> */}
-        <p className="font-bold text-inherit">ACME</p>
-      </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+    <nav className='w-[340px] h-14 rounded-full bg-zinc-200 opacity-90 backdrop-blur-lg flex justify-center items-center fixed bottom-0 z-50'>
+        <ul className='w-full flex justify-around'>
+          <Link to='/'><li>Feed</li></Link>
+          <Link to='/chat'><li>Chat</li></Link>
+          {/* <Link to='/chat:chatid'><li>Chats</li></Link> */}
+          <Link to='/account'><li>Account</li></Link>
+        </ul>
+    </nav>
   );
 }
